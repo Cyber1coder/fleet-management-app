@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
+    <style>
+        .navbar{
+            height:30px;
+            padding:10px;
+            box-shadow: box-shadow: box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            background-color: grey;
+            margin-left:170px;
+        }
+
+        .sidebar{
+            width:150px;
+            height:800px;
+            padding:10px;
+            margin:0;
+            display:flex;
+            flex-direction: column;
+            background-color: rgb(177, 168, 168);
+        }
+    </style>
 </head>
 <body>
     
@@ -22,11 +41,11 @@
         </select>
 
         <button>Clear filters</button>
-
+</div>
         <div class ="sidebar">
             <h2>Add Fleet</h2>
             
-            <input type ="text" id = "regnum" placeholder = "Reg No of Vehicle">
+            <input type ="text" id = "reg" placeholder = "Reg No of Vehicle">
 <br><br>
 
             <select id = "cat">
@@ -43,11 +62,27 @@
             <option value = "Available">Available</option>
             <option value = "Unavailable">Unavailable</option>
             
-            </select>
-        </div>
+            </select><br><br>
+            <button onclick = "addVehicle()">Add Fleet</button>
+
+        
     </div>
 
+    <div class ="main" id ="main"></div>
     <script>
+        let vehicles =[]
+        function addVehicle(){
+            let obj={
+                reg:document.getElementById("reg").value,
+                cat:document.getElementById("cat").value,
+                driver:document.getElementById("driver").value
+                avail:document.getElementById("isavail").value;
+            };
+
+            vehicles.push(obj);
+            display(vehicles);
+        }
+
         
 
     </script>
