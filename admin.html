@@ -9,8 +9,8 @@
             height:30px;
             padding:10px;
             box-shadow: box-shadow: box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-            background-color: grey;
-            margin-left:170px;
+            background-color:grey;
+           
         }
 
         .sidebar{
@@ -83,8 +83,35 @@
             display(vehicles);
         }
 
-        
+        function render(list){
+            let main =document.getElementById("main";
+                main.innerHTML="";
 
+                list.forEach(v,i) => {
+                    let card = document.vreateElement("div";
+                        card.className = "card";
+
+                    let h3 = document.createElement("h3");
+                        h3.textcontent=v.reg;
+
+                    let p1 = document.createElement("p");
+                        h3.textcontent="Category : "+v.cat;
+
+                    let p2= document.createElement("p");
+                        h3.textcontent="Driver : "+v.driver;
+
+                    let p3= document.createElement("p");
+                        h3.textcontent="Availability : "+v.isavail;
+
+                    let btn1 = document.createElement("button");
+                        btn1.textContent="Change Availability";
+                        
+                         if(data[i].isavail === "Available")   
+                        }
+                    )
+                }
+            )
+        }
     </script>
 </body>
 </html>
